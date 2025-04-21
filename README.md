@@ -1,6 +1,6 @@
-# Super Trunfo de Cidades (Nível Aventureiro - Interativo)
+# Super Trunfo de Países (Nível Mestre - Comparações Avançadas)
 
-Este projeto implementa um jogo interativo de Super Trunfo no terminal, onde duas "cartas" representando cidades são comparadas com base em um atributo escolhido pelo jogador através de um menu. Este nível aventureiro adiciona interatividade e lógica de comparação mais complexa ao jogo.
+Este é o desafio final do Super Trunfo! O programa permite que o jogador escolha dois atributos diferentes para comparar duas cartas de países, implementando menus dinâmicos e uma lógica de comparação sofisticada.
 
 ## Como Compilar e Executar
 
@@ -22,18 +22,9 @@ Este projeto implementa um jogo interativo de Super Trunfo no terminal, onde dua
 
 ## Como Jogar
 
-1.  Ao executar o programa, você será solicitado a inserir as informações para a "Carta 1" (primeira cidade), incluindo:
-    * Estado (sigla com 2 caracteres, ex: SP)
-    * Código da Carta (código com 3 caracteres, ex: A01)
-    * Nome da Cidade
-    * População
-    * Área (em km²)
-    * PIB (em bilhões de reais)
-    * Número de Pontos Turísticos
+1.  Ao executar o programa, duas cartas de países (Brasil e Argentina) serão carregadas com seus respectivos atributos.
 
-2.  Em seguida, você fará o mesmo para a "Carta 2" (segunda cidade).
-
-3.  Após inserir os dados de ambas as cartas, um menu interativo será exibido, permitindo que você escolha qual atributo usar para a comparação:
+2.  O programa exibirá um menu para que você escolha o **primeiro** atributo para comparar:
     ```
     Escolha o atributo para comparar:
     1 - Populacao
@@ -42,34 +33,35 @@ Este projeto implementa um jogo interativo de Super Trunfo no terminal, onde dua
     4 - Numero de Pontos Turisticos
     5 - Densidade Demografica
     6 - PIB per Capita
-    0 - Sair
     Digite sua escolha:
     ```
 
-4.  Digite o número correspondente ao atributo que você deseja usar para comparar as duas cidades e pressione Enter.
+3.  Digite o número correspondente ao primeiro atributo desejado e pressione Enter.
 
-5.  O programa exibirá os valores do atributo escolhido para cada cidade e declarará qual "Carta" venceu a rodada, seguindo as seguintes regras:
-    * **Regra Geral:** Vence a carta com o maior valor no atributo escolhido.
-    * **Regra Especial (Densidade Demográfica):** Vence a carta com o **menor** valor de densidade demográfica.
-    * **Empate:** Se os valores do atributo forem iguais para ambas as cartas, será exibida a mensagem "Empate!".
+4.  Em seguida, um novo menu será exibido para que você escolha o **segundo** atributo para comparar. O primeiro atributo escolhido estará marcado como "[ESCOLHIDO]" e não deve ser selecionado novamente.
 
-6.  O menu será exibido novamente após cada comparação, permitindo que você compare as mesmas cartas usando um atributo diferente ou escolha a opção **0 - Sair** para encerrar o programa.
+5.  Digite o número correspondente ao segundo atributo (diferente do primeiro) e pressione Enter.
+
+6.  O programa então realizará as seguintes etapas:
+    * Comparará os dois países individualmente para cada um dos atributos escolhidos. A regra geral é que o maior valor vence, exceto para a Densidade Demográfica, onde o menor valor vence.
+    * Exibirá o resultado de cada comparação de atributo, indicando o vencedor em cada um.
+    * Calculará uma "pontuação" para cada país, contando quantas vezes cada um venceu nos atributos individuais.
+    * Finalmente, declarará o vencedor geral com base na maior pontuação. Em caso de pontuação igual, será declarado um empate.
 
 ## Atributos Disponíveis para Comparação
 
-1.  **População:** Número total de habitantes da cidade.
-2.  **Área:** Extensão territorial da cidade em quilômetros quadrados.
-3.  **PIB:** Produto Interno Bruto da cidade em bilhões de reais.
-4.  **Número de Pontos Turísticos:** Quantidade de locais de interesse turístico na cidade.
-5.  **Densidade Demográfica:** Número de habitantes por quilômetro quadrado (calculada como População / Área). **Menor valor vence.**
-6.  **PIB per Capita:** PIB total em reais dividido pela população da cidade.
+1.  **População:** Número total de habitantes do país.
+2.  **Área:** Extensão territorial do país em quilômetros quadrados.
+3.  **PIB:** Produto Interno Bruto do país.
+4.  **Número de Pontos Turísticos:** Quantidade de locais de interesse turístico no país.
+5.  **Densidade Demográfica:** Número de habitantes por quilômetro quadrado (População / Área). **Menor valor vence.**
+6.  **PIB per Capita:** PIB total dividido pela população do país.
 
 ## Observações
 
-* Este nível do Super Trunfo implementa um menu interativo usando a estrutura `switch` para permitir a escolha do atributo de comparação.
-* A lógica de comparação utiliza estruturas de decisão `if-else` para determinar o vencedor, considerando a regra especial para a Densidade Demográfica.
-* O programa continua permitindo comparações até que o usuário escolha a opção de sair.
-* O tratamento de entradas inválidas no menu é básico (exibe uma mensagem de erro e solicita uma nova entrada). Melhorias podem ser implementadas em níveis futuros.
+* Este nível final do Super Trunfo permite a escolha de dois atributos para uma comparação mais complexa.
+* O menu dinâmico indica o primeiro atributo escolhido para auxiliar na seleção do segundo.
+* O resultado é determinado pela "soma" de vitórias nos atributos individuais.
+* O tratamento de entradas inválidas nos menus é básico e pode ser aprimorado.
 
-Divirta-se jogando o Super Trunfo de Cidades!
-
+Parabéns por chegar ao nível mestre do Super Trunfo! Divirta-se com as comparações avançadas!
